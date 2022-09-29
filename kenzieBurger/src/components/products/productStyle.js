@@ -10,7 +10,13 @@ export const Main = styled.main`
         gap: 10px;
     }
 
+    .pesquisa{
+        display: flex;
+        justify-content: space-between;
+    }
+
     section > ul{
+        margin-top: 30px;
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
