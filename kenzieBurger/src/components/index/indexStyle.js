@@ -5,6 +5,10 @@ export const Div = styled.div`
     width: 100%;
     max-width: 1600px;
 
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
     margin: 0 auto;
     padding: 10px;`
 
