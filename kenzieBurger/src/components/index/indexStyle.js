@@ -5,6 +5,10 @@ export const Div = styled.div`
     width: 100%;
     max-width: 1600px;
 
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
     margin: 0 auto;
     padding: 10px;`
 
@@ -12,6 +16,13 @@ export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 645px){
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 10px;
+        padding-top: 10px;
+    }
 
     form{
         display: flex;
@@ -21,6 +32,11 @@ export const StyledHeader = styled.header`
         width: 100%;
         max-width: 300px;
 
+        @media (max-width: 645px){
+            width: 380px;
+            margin: 0 auto;
+        }
+
         padding: 10px;
 
         border: 2px solid var(--gray3);
@@ -28,6 +44,10 @@ export const StyledHeader = styled.header`
 
         input{
             max-width: 120px;
+
+            @media (max-width: 645px){
+                width: 380px;
+            }
             
             border: none;
 

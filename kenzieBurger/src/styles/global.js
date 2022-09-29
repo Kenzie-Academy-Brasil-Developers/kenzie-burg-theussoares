@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
 
     :root{
         --primary: #27AE60;
-        --primary50: #93D7AF 
+        --primary50: #93D7AF;
         --secundary: #EB5757;
 
         --gray1: #333333;
@@ -24,6 +24,12 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: 'Inter', sans-serif;
+        list-style: none;
+    }
+
+    img{
+        width: 100%;
+        max-width: 117px;
     }
 `
 export default GlobalStyle
