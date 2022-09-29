@@ -5,10 +5,20 @@ export const Main = styled.main`
     display: flex;
     width: 100%;
 
+    @media (max-width: 645px){
+        flex-direction: column;
+        gap: 10px;
+    }
+
     section > ul{
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
+
+        @media (max-width: 645px){
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+        }
 
         li{
             width: 100%;
@@ -22,6 +32,13 @@ export const Main = styled.main`
             padding: 10px;
 
             background-color: var(--gray6);
+            
+            @media (max-width: 645px){
+                min-width: 300px;
+                max-width: 300px;
+                gap: 20px;
+                padding: 15px;
+            }
 
             div{
                 display: flex;
