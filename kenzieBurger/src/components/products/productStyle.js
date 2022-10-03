@@ -2,6 +2,48 @@ import styled from "styled-components";
 
 export const Main = styled.main`
 
+    .pesquisado{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 88%;
+
+        button{
+            height: 40px;
+            width: 137px;
+
+            border-radius: 8px;
+            border: none;
+
+            background-color: var(--primary);
+            color: #FFFFFFFF;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        h2{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+
+            color: var(--gray1);
+
+            span{
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+
+                color: var(--gray2);
+            }
+        }
+    }
+
+
+    display: flex;
+    justify-content: space-between;
+
     .listProducts > ul::-webkit-scrollbar {
         width: 10px;
         height: 10px;
@@ -24,7 +66,7 @@ export const Main = styled.main`
         display: flex;
         justify-content: space-between;
     }
-
+        
     .listProducts > ul{
         margin-top: 30px;
         display: flex;
@@ -35,14 +77,13 @@ export const Main = styled.main`
             flex-wrap: nowrap;
             overflow-x: scroll;
             height: 430px;
-            padding-top: 40px;
             padding-left: 20px;
         }
 
         li{
             width: 100%;
             max-width: 250px;
-            max-height: 100%;
+            height: 320px;
 
             display: flex;
             flex-direction: column;
@@ -59,6 +100,7 @@ export const Main = styled.main`
                 max-height: 350px;
                 gap: 20px;
                 padding: 15px;
+                padding-top: 0px;
             }
 
             div{

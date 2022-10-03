@@ -67,6 +67,16 @@ export const Card = styled.li`
 `
 
 export const Ul = styled.ul`    
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    } 
+    
+    ::-webkit-scrollbar-thumb {   
+        background-color: var(--primary);
+        border-radius: 8px;
+    }
     width: 300px;
     width: 100%;
     height: 240px;
