@@ -12,6 +12,7 @@ function ProductList(){
     const [pesquisa, setPesquisa] = useState('')
     const [filtro, setFiltro] = useState([])
     const [carrinho, setCarrinho] = useState([])
+    const [altered, setAltered] = useState(true)
 
     useEffect(()=>{
     fetch('https://hamburgueria-kenzie-json-serve.herokuapp.com/products')
@@ -19,15 +20,18 @@ function ProductList(){
     .then((json => {
         setList(json)
     }))
-    },[pesquisa, carrinho])
+    },[filtro, carrinho])
 
 
     function busca(e){
         e.preventDefault()
-        const resultadoBusca = productList.filter((produto)=>{
-            produto.name.toLowerCase() === pesquisa.toLowerCase()
-        })
-        setFiltro(resultadoBusca)
+        if(pesquisa.length !== 0){
+            const resultadoBusca = productList.filter(produto => produto.name.toLowerCase() === pesquisa.toLowerCase()
+            )
+            setFiltro(resultadoBusca)
+            setAltered(false)
+        }
+        
     }
 
     function addCart(produtoClicado){
@@ -51,6 +55,15 @@ function ProductList(){
         setCarrinho(newCarrinho)
     }
 
+    function limparBusca(){
+        if(altered != true){
+            setAltered(true)
+            setPesquisa('')
+        }else{
+            setPesquisa('')
+        }
+    }
+
     return (
         <Div>
             <StyledHeader>
@@ -63,12 +76,19 @@ function ProductList(){
             <Main>
                 <section className="listProducts">
                 { pesquisa.length ? 
-                <div className="pesquisa">
+                <div className="pesquisado">
                     <h2>Resultado para: <span>{pesquisa}</span></h2>  
-                    <button>Limpar busca</button>              
+                    <button onClick={limparBusca}>Limpar busca</button>              
                 </div> : false}
                     <ul>
-                        <CreateProductList produtos={productList} addCart={addCart}/>
+                        {
+                            altered
+                            ?
+                                <CreateProductList produtos={productList} addCart={addCart}/>
+                            : 
+                                <CreateProductList produtos={filtro} addCart={addCart}/>
+                        }
+                       
                     </ul>
                 </section>
                 <section>
@@ -85,7 +105,7 @@ function ProductList(){
                                 </div>
                             :
                                 <Cart 
-                                    produtos={carrinho}
+                                    produtos={altered ? carrinho : filtro}
                                     remove={removerTodos}
                                     removeOne={removerEspecifico}
                                 />
