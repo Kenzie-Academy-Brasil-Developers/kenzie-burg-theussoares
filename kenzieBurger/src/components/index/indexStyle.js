@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
 export const Div = styled.div`
+
     width: 100%;
     max-width: 1600px;
 
@@ -13,6 +14,7 @@ export const Div = styled.div`
     padding: 10px;`
 
 export const StyledHeader = styled.header`
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,8 +35,7 @@ export const StyledHeader = styled.header`
         max-width: 300px;
 
         @media (max-width: 645px){
-            width: 380px;
-            margin: 0 auto;
+            width: 100%;
         }
 
         padding: 10px;

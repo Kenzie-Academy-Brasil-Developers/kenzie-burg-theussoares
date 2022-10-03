@@ -4,3 +4,13 @@
   padding: 2rem;
   text-align: center;
 }
+
+#root::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+} 
+
+#root::-webkit-scrollbar-thumb {   
+  background-color: var(--primary);
+  border-radius: 8px;
+}
