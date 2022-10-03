@@ -2,6 +2,16 @@ import styled from "styled-components";
 
 export const Main = styled.main`
 
+    .listProducts > ul::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    } 
+    
+    .listProducts > ul::-webkit-scrollbar-thumb {   
+        background-color: var(--primary);
+        border-radius: 8px;
+    }
+
     display: flex;
     width: 100%;
 
@@ -15,7 +25,7 @@ export const Main = styled.main`
         justify-content: space-between;
     }
 
-    section > ul{
+    .listProducts > ul{
         margin-top: 30px;
         display: flex;
         gap: 20px;
@@ -24,12 +34,15 @@ export const Main = styled.main`
         @media (max-width: 645px){
             flex-wrap: nowrap;
             overflow-x: scroll;
+            height: 430px;
+            padding-top: 40px;
+            padding-left: 20px;
         }
 
         li{
             width: 100%;
             max-width: 250px;
-            height: 100%;
+            max-height: 100%;
 
             display: flex;
             flex-direction: column;
@@ -40,8 +53,10 @@ export const Main = styled.main`
             background-color: var(--gray6);
             
             @media (max-width: 645px){
-                min-width: 300px;
-                max-width: 300px;
+                min-width: 280px;
+                max-width: 280px;
+                height: 100%;
+                max-height: 350px;
                 gap: 20px;
                 padding: 15px;
             }
@@ -101,8 +116,13 @@ export const Main = styled.main`
 
         li:hover{
             scale: 1.1;
-            border-color: var(--gray1);
             button{
+                scale: 1.1;
+            }
+        }
+        
+        li{
+            button:hover{
                 cursor: pointer;
                 background: var(--primary50);
                 border-color: var(--primary50);
@@ -113,12 +133,19 @@ export const Main = styled.main`
     section > div {
         display: flex;
         flex-direction: column;
-        
+
+        .info{
+            margin-top: 20px;
+        }
+                
         width: 300px;
 
-        
+        @media (max-width: 645px){
+                width: 90%;
+                margin: 0 auto;
+            }
 
-        div:nth-child(1){
+        .cartTitle{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -138,30 +165,5 @@ export const Main = styled.main`
             }
         }
 
-        div:nth-child(2){
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 158px;
-
-            p:nth-child(1){
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 1rem;
-
-                color: var(--gray1);
-            }
-
-            p:nth-child(2){
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 0.9rem;
-
-                color: var(--gray2);
-            }
-        }
     }
 `
